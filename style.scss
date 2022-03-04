@@ -74,7 +74,7 @@ nav{
     }
 }
 main {
-    padding:3%;
+    padding: 3%;
     background-color: white;
     min-height: 100vh;
     p{
@@ -105,15 +105,28 @@ main {
             weight: 700;
         }
     }
+    #list {
+        margin: 1em;
+    }
+    #right{
+        text-align: center;
+    }
+    @media only screen and (max-width: 768px) {
+        aside {
+            border-bottom: 2px solid $important-text;
+        }
+
+        section {
+            margin-top: 2%;
+        }
+    }
 }
 @media only screen and (max-width: 768px) {
     main{
         text-align: center;
     }
 }
-#right{
-    text-align: center;
-}
+
 
 footer{
     background-color: $important-text;
