@@ -35,17 +35,55 @@
       opacity: 0.35;
     }
     nav {
-      display: none;
+      display: block;
+      background-color: v.$teal;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 0;
+      max-width: 60%;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      transition: width 700ms ease-in-out;
+      #menu-close,
+      ul {
+        margin-right: 10%;
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+        transition: 300ms ease-in-out 200ms;
+      }
+      #menu-close {
+        margin-bottom: 25%;
+        margin-top: 10%;
+      }
+      ul {
+        text-align: right;
+      }
+      li {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+      }
+      a {
+        color: v.$white;
+      }
     }
     .nav-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
       background: none;
       border: none;
+      cursor: pointer;
       img {
         width: 30px;
       }
+    }
+    #menu-open {
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
     .cta {
       color: v.$white;
@@ -184,6 +222,9 @@
     .subtext {
       font-size: 2rem;
     }
+    nav {
+      max-width: 30%;
+    }
   }
   #toolkit {
     ul {
@@ -243,6 +284,7 @@
     li {
       display: inline-block;
       margin-left: 3%;
+      padding-bottom: 5px;
     }
     a {
       color: v.$white;
