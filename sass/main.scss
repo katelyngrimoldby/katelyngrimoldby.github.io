@@ -53,6 +53,10 @@
       padding: 8px 16px;
       display: inline-block;
       margin: 10px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+      &:hover {
+        box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+      }
     }
   }
 
@@ -78,6 +82,7 @@
       background-color: v.$offwhite;
       border-radius: 50%;
       margin: 10%;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     }
   }
   #projects {
@@ -109,6 +114,14 @@
         border-radius: 5px;
         background-color: v.$white;
         color: v.$black;
+        &:focus {
+          border: none;
+          outline: 5px solid v.$teal;
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        &:hover {
+          box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
       }
       textarea {
         width: 100%;
@@ -120,6 +133,10 @@
         padding: 8px 16px;
         appearance: none;
         color: v.$white;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        &:hover {
+          box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
       }
     }
     ul {
@@ -135,6 +152,10 @@
       width: 70px;
       background-color: v.$white;
       border-radius: 50%;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+      &:hover {
+        box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+      }
     }
   }
   footer {
@@ -246,10 +267,11 @@
   #contact {
     .container {
       display: flex;
-      gap: 5%;
+      justify-content: center;
     }
     form {
       margin-bottom: 0;
+
       input {
         width: 50%;
       }
@@ -261,7 +283,9 @@
       }
     }
     ul {
+      margin: 4% 10%;
       flex-direction: column;
+      justify-content: space-between;
     }
     li {
       width: 130px;
