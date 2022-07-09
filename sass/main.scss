@@ -66,7 +66,19 @@
       }
       li {
         margin-bottom: 10px;
-        padding-bottom: 5px;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 4px;
+          left: 50;
+          background-color: v.$white;
+          transition: width 300ms ease-in-out;
+        }
+        &:hover::after {
+          width: 25%;
+        }
       }
       a {
         color: v.$white;
@@ -261,34 +273,48 @@
     font-size: 1.75rem;
   }
   header {
-    height: 500px;
+    height: 75vh;
+    max-height: 700px;
     padding-top: 0px;
     .hero-img {
-      height: 500px;
+      height: 700px;
     }
     &::before {
-      height: 600px;
+      height: 700px;
     }
     .nav-btn {
       display: none;
     }
     nav {
+      position: relative;
       display: flex;
-      padding-block: 3% 100px;
+      padding-block: 3% 200px;
+      width: 100%;
+      max-width: 100%;
+      background: none;
+      box-shadow: none;
+      height: auto;
+      ul {
+        display: flex;
+        justify-content: right;
+        flex-grow: 1;
+        pointer-events: auto;
+        user-select: text;
+        opacity: 1;
+        margin: 0;
+      }
+      li {
+        display: inline-block;
+        margin-left: 10%;
+        &:hover::after {
+          width: 40px;
+        }
+      }
+      a {
+        color: v.$white;
+      }
     }
-    ul {
-      display: flex;
-      justify-content: right;
-      flex-grow: 1;
-    }
-    li {
-      display: inline-block;
-      margin-left: 3%;
-      padding-bottom: 5px;
-    }
-    a {
-      color: v.$white;
-    }
+
     .cta {
       padding: 10px 20px;
     }
