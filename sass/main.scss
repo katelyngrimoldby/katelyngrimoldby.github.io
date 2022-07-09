@@ -157,6 +157,12 @@
     &::before {
       height: 400px;
     }
+    h1 {
+      font-size: 3rem;
+    }
+    .subtext {
+      font-size: 2rem;
+    }
   }
   #toolkit {
     ul {
@@ -176,6 +182,93 @@
       input {
         width: 75%;
       }
+    }
+  }
+}
+
+@media all and (min-width: 1024px) {
+  a,
+  button,
+  p,
+  .footer-content {
+    font-size: 1.25rem;
+  }
+  h2,
+  h3,
+  label {
+    font-size: 1.75rem;
+  }
+  header {
+    height: 500px;
+    padding-top: 0px;
+    .hero-img {
+      height: 500px;
+    }
+    &::before {
+      height: 600px;
+    }
+    .nav-btn {
+      display: none;
+    }
+    nav {
+      display: flex;
+      padding-block: 3% 100px;
+    }
+    ul {
+      display: flex;
+      justify-content: right;
+      flex-grow: 1;
+    }
+    li {
+      display: inline-block;
+      margin-left: 3%;
+    }
+    a {
+      color: v.$white;
+    }
+    .cta {
+      padding: 10px 20px;
+    }
+  }
+  #about {
+    overflow: auto;
+    img {
+      display: block;
+      float: left;
+      margin-right: 5%;
+      margin-bottom: 2%;
+      height: 50%;
+    }
+    p {
+      text-align: left;
+    }
+  }
+  #contact {
+    .container {
+      display: flex;
+      gap: 5%;
+    }
+    form {
+      margin-bottom: 0;
+      input {
+        width: 50%;
+      }
+      textarea {
+        margin-bottom: 3%;
+      }
+      button {
+        padding: 10px 20px;
+      }
+    }
+    ul {
+      flex-direction: column;
+    }
+    li {
+      width: 130px;
+      height: 130px;
+    }
+    img {
+      width: 70px;
     }
   }
 }
