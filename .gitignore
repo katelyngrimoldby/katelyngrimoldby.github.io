@@ -1,10 +1,6 @@
 /node_modules
 /.pnp
 .pnp.js
-package.json
-package-lock.json
-/sass
 style.css.map
-.eslintrc.json
 
 npm-debug.log*
