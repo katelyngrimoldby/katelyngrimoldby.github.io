@@ -391,12 +391,12 @@ label {
     padding: 10px 20px;
   }
 
-  #about {
-    overflow: auto;
+  #about .container {
+    display: flex;
+    align-items: center;
   }
   #about img {
     display: block;
-    float: left;
     margin-right: 5%;
     margin-bottom: 2%;
     height: 50%;
