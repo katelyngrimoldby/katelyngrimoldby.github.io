@@ -179,6 +179,7 @@
               name="user-name"
               id="user-name"
               placeholder="e.g. John Doe"
+              required
             />
             <label for="user-email">Email: </label>
             <input
@@ -186,6 +187,7 @@
               name="user-email"
               id="user-email"
               placeholder="e.g. jdoe@website.com"
+              required
             />
             <label for="message">Message: </label>
             <textarea
@@ -193,6 +195,7 @@
               id="message"
               cols="30"
               rows="10"
+              required
             ></textarea>
             <div class="wrapper">
               <div
@@ -231,30 +234,26 @@
     </main>
     <script src="./index.js"></script>
     <script>
-      const captcha = false;
-      const setCaptcha = () => {
-        captcha ? (captcha = false) : (captcha = true);
-      };
       document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault();
-        if (captcha) {
-          emailjs
-            .sendForm(
-              'personal_email',
-              'contact_form',
-              document.querySelector('form')
-            )
-            .then(
-              () => {
-                alert('Thank you, your email has been sent.');
-              },
-              (error) => {
-                alert('Sorry, there was an error. Please try again later.');
-              }
-            );
-        } else {
-          alert('Please complete the Captcha verification.');
-        }
+
+        emailjs
+          .sendForm(
+            'personal_email',
+            'contact_form',
+            document.querySelector('form')
+          )
+          .then(
+            () => {
+              document.querySelector('form').reset();
+              alert('Thank you, your email has been sent.');
+            },
+            (error) => {
+              alert(
+                'Sorry, there was an error. Please try again later. Please ensure the reCAPTCHA has been verified. '
+              );
+            }
+          );
       });
     </script>
   </body>
