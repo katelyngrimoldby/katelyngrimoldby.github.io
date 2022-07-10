@@ -181,6 +181,7 @@
         margin: 0 auto;
       }
       .g-recaptcha {
+        display: inline-block;
         margin-bottom: 5%;
       }
       button {
@@ -193,6 +194,7 @@
         &:hover {
           box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
         }
+        display: inline-block;
       }
     }
     ul {
@@ -262,11 +264,15 @@
       input {
         width: 75%;
       }
+      .g-recaptcha {
+        margin-bottom: 0;
+      }
       .wrapper {
         width: 100%;
         margin: 0;
         display: flex;
         justify-content: space-between;
+        align-items: center;
       }
       button {
         height: 40px;
@@ -354,6 +360,7 @@
     .container {
       display: flex;
       justify-content: center;
+      align-items: center;
     }
     form {
       margin-bottom: 0;
