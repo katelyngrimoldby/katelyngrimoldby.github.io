@@ -176,10 +176,7 @@
       textarea {
         width: 100%;
       }
-      .wrapper {
-        width: 90%;
-        margin: 0 auto;
-      }
+
       .g-recaptcha {
         display: inline-block;
         margin-bottom: 5%;
@@ -224,6 +221,27 @@
   }
 }
 
+@media all and (min-width: 423px) {
+  #contact {
+    form {
+      .wrapper {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .g-recaptcha {
+        margin-bottom: 0;
+      }
+
+      button {
+        height: 40px;
+      }
+    }
+  }
+}
+
 @media all and (min-width: 768px) {
   header {
     text-align: left;
@@ -263,19 +281,6 @@
       width: 100%;
       input {
         width: 75%;
-      }
-      .g-recaptcha {
-        margin-bottom: 0;
-      }
-      .wrapper {
-        width: 100%;
-        margin: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      button {
-        height: 40px;
       }
     }
   }
