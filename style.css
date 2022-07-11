@@ -274,10 +274,6 @@ ul {
   #contact form textarea {
     width: 100%;
   }
-  #contact form .wrapper {
-    width: 90%;
-    margin: 0 auto;
-  }
   #contact form .g-recaptcha {
     display: inline-block;
     margin-bottom: 5%;
@@ -336,6 +332,27 @@ ul {
     color: #fffdfa;
   }
 }
+@media all and (min-width: 423px) {
+  #contact form .wrapper {
+    width: 100%;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  #contact form .g-recaptcha {
+    margin-bottom: 0;
+  }
+  #contact form button {
+    height: 40px;
+  }
+}
 @media all and (min-width: 768px) {
   header {
     text-align: left;
@@ -375,25 +392,6 @@ ul {
   }
   #contact form input {
     width: 75%;
-  }
-  #contact form .g-recaptcha {
-    margin-bottom: 0;
-  }
-  #contact form .wrapper {
-    width: 100%;
-    margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-  #contact form button {
-    height: 40px;
   }
 }
 @media all and (min-width: 1024px) {
