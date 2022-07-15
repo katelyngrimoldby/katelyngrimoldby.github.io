@@ -524,6 +524,7 @@ ul {
   #contact li {
     width: 130px;
     height: 130px;
+    margin: 10%;
   }
   #contact img {
     width: 70px;
