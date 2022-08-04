@@ -59,7 +59,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
       (() => {
-        emailjs.init('XqEReg1JY2MU7HFYE');
+        emailjs.init("XqEReg1JY2MU7HFYE");
       })();
     </script>
 
@@ -101,39 +101,51 @@
           <ul>
             <li>
               <img src="./images/html.svg" alt="HTML5" />
+              <span>HTML5</span>
             </li>
             <li>
               <img src="./images/css.svg" alt="CSS3" />
+              <span>CSS3</span>
             </li>
             <li>
               <img src="./images/js.svg" alt="Javascript" />
+              <span>Javascript</span>
             </li>
             <li>
               <img src="./images/git.svg" alt="Git" />
+              <span>Git</span>
             </li>
             <li>
               <img src="./images/sass.svg" alt="Sass" />
+              <span>Sass</span>
             </li>
             <li>
               <img src="./images/ts.svg" alt="Typescript" />
+              <span>Typescript</span>
             </li>
             <li>
               <img src="./images/react.svg" alt="React" />
+              <span>React</span>
             </li>
             <li>
               <img src="./images/next.svg" alt="Next.js" />
+              <span>Next.js</span>
             </li>
             <li>
               <img src="./images/redux.svg" alt="Redux" />
+              <span>Redux</span>
             </li>
             <li>
               <img src="./images/webpack.svg" alt="Webpack" />
+              <span>Webpack</span>
             </li>
             <li>
               <img src="./images/jest.svg" alt="Jest" />
+              <span>Jest</span>
             </li>
             <li>
               <img src="./images/api.svg" alt="REST APIs" />
+              <span>REST APIs</span>
             </li>
           </ul>
         </div>
@@ -212,18 +224,21 @@
           <ul>
             <li>
               <a href="https://github.com/katelyngrimoldby" target="_blank"
-                ><img src="./images/github.svg" alt="Github"
-              /></a>
+                ><img src="./images/github.svg" alt="Github" />
+                <span>Github</span></a
+              >
             </li>
             <li>
               <a href="linkedin.com/in/katelyn-grimoldby" target="_blank"
-                ><img src="./images/linkedin.svg" alt="LinkedIn"
-              /></a>
+                ><img src="./images/linkedin.svg" alt="LinkedIn" />
+                <span>LinkedIn</span></a
+              >
             </li>
             <li>
               <a href="mailto:katelyngrimoldby@gmail.com"
-                ><img src="./images/email.svg" alt="Email"
-              /></a>
+                ><img src="./images/email.svg" alt="Email" />
+                <span>Email</span></a
+              >
             </li>
           </ul>
         </div>
@@ -236,23 +251,23 @@
     </main>
     <script src="./index.js"></script>
     <script>
-      document.querySelector('form').addEventListener('submit', (e) => {
+      document.querySelector("form").addEventListener("submit", (e) => {
         e.preventDefault();
 
         emailjs
           .sendForm(
-            'personal_email',
-            'contact_form',
-            document.querySelector('form')
+            "personal_email",
+            "contact_form",
+            document.querySelector("form")
           )
           .then(
             () => {
-              document.querySelector('form').reset();
-              alert('Thank you, your email has been sent.');
+              document.querySelector("form").reset();
+              alert("Thank you, your email has been sent.");
             },
             (error) => {
               alert(
-                'Sorry, there was an error. Please try again later. Please ensure the reCAPTCHA has been verified. '
+                "Sorry, there was an error. Please try again later. Please ensure the reCAPTCHA has been verified. "
               );
             }
           );

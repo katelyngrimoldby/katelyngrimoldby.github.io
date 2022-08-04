@@ -1,50 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap");
 h1 {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: 700;
   font-size: 2rem;
 }
 
 h2 {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
 h3,
 label {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: 400;
   font-size: 1.5rem;
 }
 
 .subtext {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 1.7rem;
 }
 .subtext::after {
-  content: '\a';
+  content: "\a";
   white-space: pre;
 }
 
 a,
-button {
-  font-family: 'Roboto', sans-serif;
+button,
+span {
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 1.125rem;
   text-decoration: none;
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.5;
 }
 
 .footer-content {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1.125rem;
 }
@@ -78,7 +79,7 @@ ul {
     left: 0px;
   }
   header::before {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     width: 100%;
@@ -139,7 +140,7 @@ ul {
     margin-bottom: 10px;
   }
   header nav li::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 0;
@@ -209,6 +210,7 @@ ul {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    position: relative;
     height: 70px;
     width: 70px;
     background-color: #fdf2ed;
@@ -216,6 +218,26 @@ ul {
     margin: 10%;
     -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  #toolkit li span {
+    color: #3ebbb7;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+  }
+  #toolkit li img {
+    opacity: 1;
+    position: absolute;
+    -webkit-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+  }
+  #toolkit li:hover span {
+    opacity: 1;
+  }
+  #toolkit li:hover img {
+    opacity: 0;
   }
 
   #projects {
@@ -253,7 +275,7 @@ ul {
     margin-block: 1% 5%;
     border: 2px solid #c28d75;
     font-size: 1.125rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     padding: 5px 15px;
     border-radius: 5px;
     background-color: #fffdfa;
@@ -313,16 +335,42 @@ ul {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 70px;
-    width: 70px;
+    position: relative;
+    height: 80px;
+    width: 80px;
     background-color: #fffdfa;
     border-radius: 50%;
     -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   }
+  #contact li span {
+    color: #3ebbb7;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+  }
+  #contact li img {
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+  }
   #contact li:hover {
     -webkit-box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
     box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  #contact li:hover span {
+    opacity: 1;
+  }
+  #contact li:hover img {
+    opacity: 0;
   }
 
   footer {
@@ -524,7 +572,7 @@ ul {
   #contact li {
     width: 130px;
     height: 130px;
-    margin: 10%;
+    margin-block: 10%;
   }
   #contact img {
     width: 70px;
