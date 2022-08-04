@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 h1 {
   font-family: v.$merriweather;
@@ -24,13 +24,14 @@ label {
   font-weight: 300;
   font-size: 1.7rem;
   &::after {
-    content: '\a';
+    content: "\a";
     white-space: pre;
   }
 }
 
 a,
-button {
+button,
+span {
   font-family: v.$roboto;
   font-weight: 700;
   font-size: 1.125rem;
