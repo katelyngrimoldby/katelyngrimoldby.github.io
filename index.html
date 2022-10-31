@@ -56,7 +56,6 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
       (() => {
         emailjs.init("XqEReg1JY2MU7HFYE");
@@ -194,7 +193,7 @@
             and always ready to jump in head-first to help a team member.
             <br />
             <br />
-            This portfolio and all the projects above have been designed by me.
+            This portfolio and most projects above have been designed by me.
             As a developer, I believe understanding the 'why' behind a design to
             be just as valuable as how to implement it. That's why, in addition
             to always learning new technologies and growing as a developer, I
@@ -230,13 +229,7 @@
               rows="10"
               required
             ></textarea>
-            <div class="wrapper">
-              <div
-                class="g-recaptcha"
-                data-sitekey="6Lez8togAAAAAFlX27FA79eJ3j4YytpGhVUcogTV"
-              ></div>
               <button type="submit" id="submit">Send</button>
-            </div>
           </form>
           <ul>
             <li>
@@ -257,7 +250,7 @@
                 <span>Email</span></a
               >
             </li>
-          </ul>
+          </ul> 
         </div>
       </section>
       <footer id="footer">
@@ -284,7 +277,7 @@
             },
             (error) => {
               alert(
-                "Sorry, there was an error. Please try again later. Please ensure the reCAPTCHA has been verified. "
+                "Sorry, there was an error. Please try again later."
               );
             }
           );
