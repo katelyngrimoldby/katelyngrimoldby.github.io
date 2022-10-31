@@ -120,8 +120,10 @@
   #toolkit {
     background-color: v.$white;
     ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
     }
     li {
       display: flex;
@@ -132,7 +134,7 @@
       width: 70px;
       background-color: v.$offwhite;
       border-radius: 50%;
-      margin: 10%;
+      margin: 2rem;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
       span {
         color: v.$teal;
@@ -156,6 +158,70 @@
   }
   #projects {
     background-color: v.$offwhite;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      background-color: v.$white;
+      padding: 5%;
+      border-radius: 10px;
+      max-width: 1000px;
+
+      h3 {
+        color: v.$teal;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      ul {
+        display: flex;
+        gap: 1rem;
+        margin: 1rem 0;
+
+        li {
+          font-family: v.$roboto;
+          background-color: v.$teal;
+          color: v.$white;
+          font-weight: 500;
+          padding: 5px 8px;
+          border-radius: 5px;
+        }
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 2rem;
+        margin-top: 1rem;
+      }
+      .live {
+        color: v.$white;
+        background-color: v.$teal;
+        padding: 8px 16px;
+        display: inline-block;
+        
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        &:hover {
+          box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .code {
+        color: v.$teal;
+        background-color: v.$white;
+        border: 2px solid v.$teal;
+        padding: 8px 16px;
+        display: inline-block;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        &:hover {
+          box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
   }
   #about {
     background-color: v.$white;
@@ -303,10 +369,7 @@
       max-width: 30%;
     }
   }
-  #toolkit {
-    ul {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
+  #toolkit { 
     li {
       height: 90px;
       width: 90px;
@@ -394,7 +457,7 @@
     img {
       display: block;
       margin-right: 5%;
-      height: 50%;
+      width: 40%;
     }
     p {
       text-align: left;
