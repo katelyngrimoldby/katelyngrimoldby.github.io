@@ -1,0 +1,54 @@
+---
+import Navigation from '../components/Navigation.astro';
+---
+
+<header>
+  <Navigation />
+  <button
+    class='toggle-theme'
+    data-js='toggle-theme'
+    >Toggle dark/light</button
+  >
+</header>
+<main>
+  <slot />
+</main>
+<footer><p>Katelyn Grimoldby © 2025</p></footer>
+
+<style>
+  @media screen and (min-width: 0px) {
+    header,
+    footer {
+      padding: 1rem;
+      background-color: var(--background-secondary);
+      color: var(--foreground-primary);
+      padding: 1rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    main {
+      min-height: 100%;
+      padding: 1rem;
+      background-color: var(--background-primary);
+      color: var(--foreground-primary);
+    }
+
+    footer {
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  const btn = document.querySelector('[data-js="toggle-theme"]');
+  const body = document.querySelector('body');
+
+  btn?.addEventListener('click', () => {
+    const currTheme = body?.getAttribute('data-theme');
+    body?.setAttribute('data-theme', currTheme == 'dark' ? 'light' : 'dark');
+  });
+</script>
