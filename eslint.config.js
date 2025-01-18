@@ -1,13 +1,31 @@
 import eslintPluginAstro from "eslint-plugin-astro";
 import js from "@eslint/js";
-export default [
-  js.configs.recommended,
-  ...eslintPluginAstro.configs.recommended,
+import tseslint from "typescript-eslint";
+export default tseslint.config(
   {
-    ignores: ["/dist", "**/*.config.js"],
-    rules: {
-      // override/add rules settings here, such as:
-      // "astro/no-set-html-directive": "error"
+    ignores: [
+      "**/dist",
+      "**/node_modules",
+      "**/.astro",
+      "**/.vscode",
+      "**/.github",
+    ],
+  },
+
+  // Standard Javascript
+  js.configs.recommended,
+
+  // String Typescript w/ Type Checking
+  ...tseslint.configs.strictTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
   },
-];
+
+  // Astro
+  ...eslintPluginAstro.configs.recommended,
+);
