@@ -1,5 +1,5 @@
 ---
-title: Reflecting on Building the Job Application Tracker
+title: Reflecting on the Job Application Tracker
 date: January 5, 2025
 tags: ["Reflection", "Web", "Long"]
 image: ./images/job-tracker-source.jpg
