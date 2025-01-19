@@ -5,7 +5,8 @@
   --background-secondary: #e7e5d2;
   --foreground-primary: #141101;
   --foreground-secondary: #2a1a01;
-  --accent: #ceb214;
+  --background-accent: #ceb214;
+  --foreground-accent: #574800;
 
   --font: "Figtree", sans-serif;
 
@@ -17,9 +18,10 @@
   --background-secondary: #2a1a01;
   --foreground-primary: #faf8ed;
   --foreground-secondary: #e7e5d2;
-  --accent: #f0d959;
+  --background-accent: #574800;
+  --foreground-accent: #ceb214;
 
   --font: "Figtree", sans-serif;
 
-  --color-scheme: light;
+  --color-scheme: dark;
 }
