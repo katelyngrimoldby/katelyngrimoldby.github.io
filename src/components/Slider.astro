@@ -1,0 +1,54 @@
+---
+interface Props {
+  buttonJs: string;
+  sliderJs: string;
+}
+
+const { buttonJs, sliderJs } = Astro.props;
+---
+
+<button
+  class='theme-default'
+  data-js={buttonJs}
+>
+  <span
+    class='slider-default'
+    data-js={sliderJs}
+  ></span>
+</button>
+
+<style>
+  .theme-default,
+  .theme-altered {
+    display: inline-block;
+    width: 72px;
+    height: 36px;
+    border: none;
+    border-radius: 18px;
+    background-color: var(--background-primary);
+    transition: background-color ease-in-out 400ms;
+  }
+
+  .slider-default,
+  .slider-altered {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    left: 4px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--foreground-secondary);
+    transition:
+      transform ease-in-out 400ms,
+      background-color ease-in-out 400ms;
+  }
+
+  .slider-default {
+    transform: translateX(0);
+  }
+
+  .slider-altered {
+    transform: translateX(34px);
+  }
+</style>
