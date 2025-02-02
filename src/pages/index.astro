@@ -1,8 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import ArticleCard from '../components/ArticleCard.astro';
+import CardLayout from '../layouts/CardLayout.astro';
+import ProjectCard from '../components/Cards/ProjectCard.astro';
+import ArticleCard from '../components/Cards/ArticleCard.astro';
 
 const featuredProjects = await getCollection(
   'projects',
@@ -27,7 +28,11 @@ const featuredArticles = await getCollection(
     turpis at turpis dictum maximus. Ut nec risus ut ante bibendum auctor.
   </p>
   <h2>Featured Projects</h2>
-  <ProjectCard project={featuredProjects[0]} />
+  <CardLayout featured>
+    {featuredProjects.map((project) => <ProjectCard project={project} />)}
+  </CardLayout>
   <h2>Featured Articles</h2>
-  <ArticleCard article={featuredArticles[0]} />
+  <CardLayout featured>
+    {featuredArticles.map((article) => <ArticleCard article={article} />)}
+  </CardLayout>
 </BaseLayout>
