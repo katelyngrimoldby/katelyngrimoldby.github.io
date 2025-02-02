@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from './Layout.astro';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+---
+
+<Layout
+  href={`/projects/${project.id}`}
+  imgSrc={project.data.image}
+  imgAlt={project.data.alt}
+  tags={project.data.technologies}
+>
+  <h3>{project.data.title}</h3>
+</Layout>
