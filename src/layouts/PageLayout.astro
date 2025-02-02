@@ -1,16 +1,14 @@
 ---
 import Navigation from '../components/Navigation.astro';
-
-type Props = { children: any };
+import Slider from '../components/Slider.astro';
 ---
 
 <header>
   <Navigation />
-  <button
-    class='toggle-theme'
-    data-js='toggle-theme'
-    >Toggle dark/light</button
-  >
+  <Slider
+    buttonJs='toggle-theme'
+    sliderJs='theme-slider'
+  />
 </header>
 <main>
   <slot />
@@ -47,10 +45,19 @@ type Props = { children: any };
 
 <script>
   const btn = document.querySelector('[data-js="toggle-theme"]');
+  const slider = document.querySelector('[data-js="theme-slider"]');
   const body = document.querySelector('body');
 
   btn?.addEventListener('click', () => {
     const currTheme = body?.getAttribute('data-theme');
+    if (btn)
+      btn.className =
+        btn.className == 'theme-default' ? 'theme-altered' : 'theme-default';
+    if (slider)
+      slider.className =
+        slider.className == 'slider-default'
+          ? 'slider-altered'
+          : 'slider-default';
     body?.setAttribute('data-theme', currTheme == 'dark' ? 'light' : 'dark');
   });
 </script>
