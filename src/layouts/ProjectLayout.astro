@@ -1,0 +1,45 @@
+---
+import type { InferEntrySchema } from 'astro:content';
+import Image from 'astro/components/Image.astro';
+import Tags from '../components/Tags.astro';
+
+interface Props {
+  data: InferEntrySchema<'projects'>;
+}
+const { data } = Astro.props;
+---
+
+<article>
+  <h1>{data.title}</h1>
+  <Tags tags={data.technologies} />
+  <Image
+    src={data.image}
+    alt={data.alt}
+  />
+
+  <slot />
+</article>
+
+<style>
+  @media screen and (min-width: 0px) {
+    .date {
+      font-size: 1.25rem;
+      color: var(--foreground-secondary);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+      max-width: 800px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    article {
+      max-width: 80rem;
+      margin-inline: auto;
+    }
+  }
+</style>
