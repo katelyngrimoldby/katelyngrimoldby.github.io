@@ -45,3 +45,11 @@ a {
   font-weight: 500;
   text-decoration: none;
 }
+
+/* Global styling for p elements within article elements */
+article {
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
