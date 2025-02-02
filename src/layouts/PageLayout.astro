@@ -10,6 +10,7 @@ import Slider from '../components/Slider.astro';
     sliderJs='theme-slider'
   />
 </header>
+
 <main>
   <slot />
 </main>
@@ -22,12 +23,12 @@ import Slider from '../components/Slider.astro';
       padding: 1rem;
       background-color: var(--background-secondary);
       color: var(--foreground-primary);
-      padding: 1rem;
     }
 
     header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
 
     main {
@@ -39,6 +40,14 @@ import Slider from '../components/Slider.astro';
 
     footer {
       text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    header,
+    footer,
+    main {
+      padding-inline: 6rem;
     }
   }
 </style>
