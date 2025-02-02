@@ -1,35 +1,31 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import eslintPluginAstro from "eslint-plugin-astro";
-import js from "@eslint/js";
+import globals from "globals";
+import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
+import eslintPluginAstro from "eslint-plugin-astro";
+
 export default tseslint.config(
   {
     ignores: [
       "**/dist",
       "**/node_modules",
       "**/.astro",
-      "**/.vscode",
       "**/.github",
+      "**/.changeset",
     ],
   },
 
-  // Standard Javascript
-  js.configs.recommended,
-
-  // String Typescript w/ Type Checking
-  ...tseslint.configs.strictTypeChecked,
-  {
-    languageOptions: {
-      parserOptions: {
-        project: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-    rules: {
-      "@typescript-eslint/no-unsafe-return": "off",
-    },
-  },
-
+  // JavaScript
+  eslint.configs.recommended,
+  // TypeScript
+  ...tseslint.configs.strict,
   // Astro
   ...eslintPluginAstro.configs.recommended,
+
+  // Set globals for Node scripts.
+  {
+    files: ["scripts/**"],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 );
