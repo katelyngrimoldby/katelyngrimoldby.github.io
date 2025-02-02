@@ -11,6 +11,8 @@
   --font: "Figtree", sans-serif;
 
   --color-scheme: light;
+
+  --min-card-width: 330px;
 }
 
 [data-theme="dark"] {
@@ -20,8 +22,6 @@
   --foreground-secondary: #e7e5d2;
   --background-accent: #574800;
   --foreground-accent: #ceb214;
-
-  --font: "Figtree", sans-serif;
 
   --color-scheme: dark;
 }
