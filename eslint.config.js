@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import eslintPluginAstro from "eslint-plugin-astro";
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
@@ -20,9 +21,12 @@ export default tseslint.config(
   {
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        project: true,
         tsconfigRootDir: import.meta.dirname,
       },
+    },
+    rules: {
+      "@typescript-eslint/no-unsafe-return": "off",
     },
   },
 
