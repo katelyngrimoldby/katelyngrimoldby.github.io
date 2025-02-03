@@ -21,7 +21,7 @@ Make sure to specify a class name, as that is important for styling the slider. 
 
 ## The CSS
 
-This is where the bulk of the work goes in to make your slider _look_ like a slider. We'll be using classes to manage the visual state of pur slider, so be sure to be consisten in the classes you use. To start, let's define the basic appearance of the slider.
+This is where the bulk of the work goes in to make your slider _look_ like a slider. We'll be using classes to manage the visual state of pur slider, so be sure to be consistent in the classes you use. To start, let's define the basic appearance of the slider.
 
 ```css
 .toggle-default,
@@ -54,7 +54,6 @@ Next we need to style the indicator of the slider. This is the element that will
 .toggle-altered::before {
   content: "";
   display: block;
-  cursor: pointer;
   position: relative;
   right: 2px;
   width: 30px;
@@ -65,7 +64,7 @@ Next we need to style the indicator of the slider. This is the element that will
 }
 ```
 
-Since we're using this pseudo element as a shape, we don't need any content, so an empty string will suffice. Display is block, as the relative positioning means we need not worry about how the pseudo element interacts with others. Width and height may once again be defined in em or rem in lieu of pixels. Since the pseudo element has equal height and width, we can use a percentage for `border-radius` without uneven results. Top and bottom are not needed as our pseudo element will already be centered vertically; left and right may be adjusted as needed - 2px is what worked for me. The `background-color` may once again be set to whatever you wish. Finally, since we'll be using transform to move the indicator we define an animation for it. Next, we set up the transform to position the indcator in its default and altered states.
+Since we're using this pseudo-element as a shape we don't need any content, so an empty string will suffice. Display is block, as the relative positioning means we need not worry about how the pseudo-element interacts with others. Width and height may once again be defined in em or rem in lieu of pixels. Since the pseudo-element has equal height and width, we can use a percentage for `border-radius` without uneven results. Top and bottom are not needed as our pseudo-element will already be centered vertically; left and right may be adjusted as needed - 2px is what worked for me. The `background-color` may once again be set to whatever you wish. Finally, since we'll be using transform to move the indicator we define an animation for it. Next, we set up the transform to position the indcator in its default and altered states.
 
 ```css
 .toggle-default::before {
@@ -102,3 +101,65 @@ With the JavaScript written, the slider is finished. Read on for a no-js solutio
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+## Alternative solution
+
+Although the toggle slider I just built uses JavaScript to control and alte the slider's state, we can also build a version that needs no JavaScript with the use of a checkbox. First we need to add the HTML:
+
+```html
+<label class="slider"><input type="checkbox" class="checkbox" /></label>
+```
+
+We use a label as our silder instead of a span (or any other element) because a label serves as a button to either focus or trigger the input it represents. In the case of a checkbox input, clicking the label checks and unchecks the box. We use this mechanic as well as the CSS-selectable state of the checkbox to add visuals to our slider.
+
+```css
+.slider {
+  display: inline-block;
+  transition: background-color ease-in-out 400ms;
+  background-color: #d1d1d1;
+  width: 72px;
+  height: 36px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.slider input {
+  height: 0;
+  width: 0;
+}
+
+.slider::before {
+  content: "";
+  display: block;
+  position: relative;
+  top: 3px;
+  left: 3px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform ease-in-out 400ms;
+  transform: translateX(0);
+}
+
+.slider:has(input:checked) {
+  background-color: #40a1e2;
+}
+
+.slider:has(input:checked)::before {
+  transform: translateX(36px);
+}
+```
+
+Here is the CSS for our slider. Note the appearance of the slider and its pseudo element aren't too disimilar to the previous slider we did. The pseudo-element's positioning values differ simply due to differing user agent styles between a button and a label; with a proper CSS reset the two would be identical. Note also that we explicitly use a pointer cursor here. Such behaviour is default for buttons, but not for labels. As before, sizing and colouration may be altered to your preferences or needs.
+
+Note that we make the checkbox visually hidden by setting height and width to 0. For accessibility purposes this is preferred over `display: none`. Also note that our default appearance is placed along our constant styles instead of its wn section. This is because a checkbox does not have an unchecked state we can select in CSS. We do have a selector for the checked state, however, so we use that alongside a `:has()` pseudo-class to select our slider and its pseudo-element only when the input is checked.
+
+This is a simple approach to a slider that involves no JavaScript. Of course, depending on the use case of your slider and your priorities one approach may be more preferable over the other - do you want to keep the DOM as uncluttered as possible or use JavaScript only when mandatory?. In my case, I needed to use JavaScript to achieve the purpose of the slider and my website is already light on JavaScript. I decided the button approach was best for me. You may have a different preference for your own website. Below is the CodePen for our no-js slider. Happy coding!
+
+<iframe src="https://codesandbox.io/embed/vydkvr?view=editor+%2B+preview&module=%2Fstyles.css"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="no-js-slider"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
