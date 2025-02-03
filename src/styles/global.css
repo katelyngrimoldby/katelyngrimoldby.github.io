@@ -47,10 +47,27 @@ a {
   text-decoration: none;
 }
 
-/* Global styling for p elements within article elements */
+/* Global styling for elements within article elements */
 article {
   p {
     margin-bottom: 1rem;
     line-height: 1.5;
+  }
+
+  .astro-code {
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 60rem;
+
+    span {
+      font-family: monospace;
+    }
+  }
+
+  iframe {
+    display: block;
+    max-width: 60rem;
+    margin: 1rem auto;
+    margin-inline: auto;
   }
 }
