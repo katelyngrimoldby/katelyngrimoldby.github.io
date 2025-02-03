@@ -31,22 +31,15 @@ import Slider from '../components/Slider.astro';
     }
 
     main {
+      width: 100%;
       flex-grow: 2;
       padding: 1rem;
-      background-color: var(--background-primary);
-      color: var(--foreground-primary);
+      max-width: 90rem;
+      margin-inline: auto;
     }
 
     footer {
       text-align: center;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    header,
-    footer,
-    main {
-      padding-inline: 6rem;
     }
   }
 </style>
