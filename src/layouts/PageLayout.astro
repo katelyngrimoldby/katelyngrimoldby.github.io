@@ -5,10 +5,7 @@ import Slider from '../components/Slider.astro';
 
 <header>
   <Navigation />
-  <Slider
-    buttonJs='toggle-theme'
-    sliderJs='theme-slider'
-  />
+  <Slider buttonJs='toggle-theme' />
 </header>
 <main>
   <slot />
@@ -53,7 +50,6 @@ import Slider from '../components/Slider.astro';
 
 <script>
   const btn = document.querySelector('[data-js="toggle-theme"]');
-  const slider = document.querySelector('[data-js="theme-slider"]');
   const body = document.querySelector('body');
 
   btn?.addEventListener('click', () => {
@@ -61,11 +57,6 @@ import Slider from '../components/Slider.astro';
     if (btn)
       btn.className =
         btn.className == 'theme-default' ? 'theme-altered' : 'theme-default';
-    if (slider)
-      slider.className =
-        slider.className == 'slider-default'
-          ? 'slider-altered'
-          : 'slider-default';
     body?.setAttribute('data-theme', currTheme == 'dark' ? 'light' : 'dark');
   });
 </script>

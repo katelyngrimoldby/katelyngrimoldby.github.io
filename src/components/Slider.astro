@@ -1,20 +1,15 @@
 ---
 interface Props {
   buttonJs: string;
-  sliderJs: string;
 }
 
-const { buttonJs, sliderJs } = Astro.props;
+const { buttonJs } = Astro.props;
 ---
 
 <button
   class='theme-default'
   data-js={buttonJs}
 >
-  <span
-    class='slider-default'
-    data-js={sliderJs}
-  ></span>
 </button>
 
 <style>
@@ -29,8 +24,9 @@ const { buttonJs, sliderJs } = Astro.props;
     transition: background-color ease-in-out 400ms;
   }
 
-  .slider-default,
-  .slider-altered {
+  .theme-default::before,
+  .theme-altered::before {
+    content: '';
     display: block;
     cursor: pointer;
     position: relative;
@@ -44,11 +40,11 @@ const { buttonJs, sliderJs } = Astro.props;
       background-color ease-in-out 400ms;
   }
 
-  .slider-default {
+  .theme-default::before {
     transform: translateX(0);
   }
 
-  .slider-altered {
+  .theme-altered::before {
     transform: translateX(34px);
   }
 </style>
