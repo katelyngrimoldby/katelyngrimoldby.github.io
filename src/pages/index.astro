@@ -16,16 +16,19 @@ const featuredArticles = await getCollection(
 ---
 
 <BaseLayout title='Home'>
-  <h1>Home</h1>
+  <h1>Katelyn Grimoldby</h1>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-    turpis ut libero sollicitudin scelerisque at et turpis. Suspendisse
-    hendrerit justo ex, eu interdum purus vestibulum eget. In consectetur velit
-    tristique, pretium ante vel, euismod enim. Suspendisse potenti. Morbi
-    convallis enim id ipsum sollicitudin, sit amet gravida velit facilisis. Sed
-    cursus gravida lectus. Aenean et enim ac dui malesuada convallis. Aliquam
-    sit amet quam non augue consectetur vehicula non eget neque. Donec eget
-    turpis at turpis dictum maximus. Ut nec risus ut ante bibendum auctor.
+    Hi! My name is Katelyn and I am an undegraduate student in Computing and
+    Information Resources at Athabasca University. I am eager to put my
+    knowledge to work to better the world, no matter how big or small the
+    impact. With experience in software development, I have developed a strong
+    foundation in programming languages such as Java, SQL, and JavaScript. I am
+    also proficient in tools and libraries covering all aspects of software such
+    as React, Express, and Docker. I am committed to provided high-quality work,
+    exceeding expectations, and being a valuable team player. This portfolio
+    showcases some of my work and learning in a variety of technologies. I
+    provide overviews and links to my projects, as well as articles on all sorts
+    of topics.
   </p>
   <h2>Featured Projects</h2>
   <CardLayout featured>
@@ -36,3 +39,11 @@ const featuredArticles = await getCollection(
     {featuredArticles.map((article) => <ArticleCard article={article} />)}
   </CardLayout>
 </BaseLayout>
+
+<style>
+  p {
+    font-size: 1.125rem;
+    max-width: 80rem;
+    margin: 1rem 0;
+  }
+</style>
