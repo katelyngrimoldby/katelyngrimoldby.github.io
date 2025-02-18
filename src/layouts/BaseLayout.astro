@@ -48,6 +48,6 @@ const { title } = Astro.props;
     .querySelector('body')
     ?.setAttribute(
       'data-theme',
-      window.matchMedia('prefers-color-scheme: dark') ? 'dark' : 'light'
+      window.matchMedia('prefers-color-scheme: dark').matches ? 'dark' : 'light'
     );
 </script>
