@@ -1,0 +1,58 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Slider from '../components/Slider.astro';
+---
+
+<header>
+  <Navigation />
+  <Slider buttonJs='toggle-theme' />
+</header>
+<main>
+  <slot />
+</main>
+<footer><p>Katelyn Grimoldby © 2025</p></footer>
+
+<style>
+  @media screen and (min-width: 0px) {
+    header,
+    footer {
+      padding: 1rem;
+      background-color: var(--background-secondary);
+      color: var(--foreground-primary);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    main {
+      width: 100%;
+      flex-grow: 2;
+      padding: 1rem;
+      max-width: 90rem;
+      margin-inline: auto;
+    }
+
+    footer {
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  const btn = document.querySelector('[data-js="toggle-theme"]');
+  const body = document.querySelector('body');
+
+  btn?.addEventListener('click', () => {
+    const currTheme = body?.getAttribute('data-theme');
+    if (btn)
+      btn.className =
+        btn.className == 'theme-default' ? 'theme-altered' : 'theme-default';
+    body?.setAttribute('data-theme', currTheme == 'dark' ? 'light' : 'dark');
+  });
+</script>

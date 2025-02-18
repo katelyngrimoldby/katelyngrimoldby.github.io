@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CardLayout from '../layouts/CardLayout.astro';
+import ProjectCard from '../components/Cards/ProjectCard.astro';
+import ArticleCard from '../components/Cards/ArticleCard.astro';
+
+const featuredProjects = await getCollection(
+  'projects',
+  (project) => project.data.featured
+);
+const featuredArticles = await getCollection(
+  'articles',
+  (article) => article.data.featured
+);
+---
+
+<BaseLayout title='Home'>
+  <h1>Katelyn Grimoldby</h1>
+  <p>
+    Hi! My name is Katelyn and I am an undegraduate student in Computing and
+    Information Resources at Athabasca University. I am eager to put my
+    knowledge to work to better the world, no matter how big or small the
+    impact. With experience in software development, I have developed a strong
+    foundation in programming languages such as Java, SQL, and JavaScript. I am
+    also proficient in tools and libraries covering all aspects of software such
+    as React, Express, and Docker. I am committed to provided high-quality work,
+    exceeding expectations, and being a valuable team player. This portfolio
+    showcases some of my work and learning in a variety of technologies. I
+    provide overviews and links to my projects, as well as articles on all sorts
+    of topics.
+  </p>
+  <h2>Featured Projects</h2>
+  <CardLayout featured>
+    {featuredProjects.map((project) => <ProjectCard project={project} />)}
+  </CardLayout>
+  <h2>Featured Articles</h2>
+  <CardLayout featured>
+    {featuredArticles.map((article) => <ArticleCard article={article} />)}
+  </CardLayout>
+</BaseLayout>
+
+<style>
+  p {
+    font-size: 1.125rem;
+    max-width: 80rem;
+    margin: 1rem 0;
+  }
+</style>

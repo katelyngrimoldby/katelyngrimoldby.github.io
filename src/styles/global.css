@@ -1,0 +1,81 @@
+@import "./variables.css";
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+p,
+a,
+span {
+  font-family: var(--font);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-variant: small-caps;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-variant: small-caps;
+  margin-bottom: 0.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+p,
+a,
+span {
+  font-size: 1rem;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Global styling for elements within article elements */
+article {
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  a {
+    color: var(--foreground-accent);
+
+    &:hover {
+      color: var(--foreground-secondary);
+    }
+  }
+
+  .astro-code {
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 60rem;
+
+    span {
+      font-family: monospace;
+    }
+  }
+
+  iframe {
+    display: block;
+    max-width: 60rem;
+    margin: 1rem auto;
+    margin-inline: auto;
+  }
+}

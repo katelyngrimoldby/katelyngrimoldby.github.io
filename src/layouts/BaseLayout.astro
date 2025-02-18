@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import PageLayout from './PageLayout.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <link
+      rel='icon'
+      type='image/svg+xml'
+      href='/favicon.svg'
+    />
+    <meta
+      name='generator'
+      content={Astro.generator}
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <PageLayout><slot /></PageLayout>
+  </body>
+</html>
+
+<style>
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
+  }
+</style>
+
+<script>
+  document
+    .querySelector('body')
+    ?.setAttribute(
+      'data-theme',
+      window.matchMedia('prefers-color-scheme: dark').matches ? 'dark' : 'light'
+    );
+</script>

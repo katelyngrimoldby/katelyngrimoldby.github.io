@@ -1,0 +1,33 @@
+---
+interface Props {
+  featured?: boolean;
+}
+
+const { featured = false } = Astro.props;
+---
+
+<div class={featured ? 'featured-container' : 'container'}>
+  <slot />
+</div>
+
+<style>
+  .container,
+  .featured-container {
+    display: grid;
+    gap: 1rem;
+  }
+  .container {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--min-card-width), 1fr)
+    );
+  }
+
+  .featured-container {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(var(--min-card-width), 1fr);
+    overflow-x: auto;
+    scroll-snap-type: inline mandatory;
+    margin-inline: auto;
+  }
+</style>

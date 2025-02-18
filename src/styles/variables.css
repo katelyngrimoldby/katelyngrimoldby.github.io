@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --background-primary: #faf8ed;
+  --background-secondary: #e7e5d2;
+  --foreground-primary: #141101;
+  --foreground-secondary: #2a1a01;
+  --background-accent: #ceb214;
+  --foreground-accent: #574800;
+
+  --font: "Figtree", sans-serif;
+
+  --color-scheme: light;
+
+  --min-card-width: 330px;
+}
+
+[data-theme="dark"] {
+  --background-primary: #141101;
+  --background-secondary: #2a1a01;
+  --foreground-primary: #faf8ed;
+  --foreground-secondary: #e7e5d2;
+  --background-accent: #574800;
+  --foreground-accent: #ceb214;
+
+  --color-scheme: dark;
+}

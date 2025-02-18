@@ -1,0 +1,50 @@
+---
+interface Props {
+  buttonJs: string;
+}
+
+const { buttonJs } = Astro.props;
+---
+
+<button
+  class='theme-default'
+  data-js={buttonJs}
+>
+</button>
+
+<style>
+  .theme-default,
+  .theme-altered {
+    display: inline-block;
+    width: 72px;
+    height: 36px;
+    border: none;
+    border-radius: 18px;
+    background-color: var(--foreground-accent);
+    transition: background-color ease-in-out 400ms;
+  }
+
+  .theme-default::before,
+  .theme-altered::before {
+    content: '';
+    display: block;
+    cursor: pointer;
+    position: relative;
+    left: 4px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--foreground-secondary);
+    transition:
+      transform ease-in-out 400ms,
+      background-color ease-in-out 400ms;
+  }
+
+  .theme-default::before {
+    transform: translateX(0);
+  }
+
+  .theme-altered::before {
+    transform: translateX(34px);
+  }
+</style>
