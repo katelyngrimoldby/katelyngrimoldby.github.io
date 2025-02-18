@@ -54,6 +54,14 @@ article {
     line-height: 1.5;
   }
 
+  a {
+    color: var(--foreground-accent);
+
+    &:hover {
+      color: var(--foreground-secondary);
+    }
+  }
+
   .astro-code {
     padding: 1rem;
     margin: 1rem auto;
